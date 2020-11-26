@@ -1,0 +1,27 @@
+name: metric-store-exporter
+version: 1.0.0
+commit_hash: ec6c35d
+uncommitted_changes: false
+jobs:
+- name: metric-store-exporter
+  version: 66fe11b42661c86d4230abd473f258949f05e7501ce3db38a92bbbda9f7218b7
+  fingerprint: 66fe11b42661c86d4230abd473f258949f05e7501ce3db38a92bbbda9f7218b7
+  sha1: sha256:140a9ac71059706a251d4681099889e659832f940b48a3efa945b7f4eda724a9
+  packages:
+  - metric-store-exporter
+packages:
+- name: golang-1-linux
+  version: f9b637fa0c031f977d2418949a3182e21fe2d95505595ebfe558a448501a8ad6
+  fingerprint: f9b637fa0c031f977d2418949a3182e21fe2d95505595ebfe558a448501a8ad6
+  sha1: sha256:a862fe14c40ee5fa36ebec6db08895846f955e10a22e4e4504081290317316f4
+  dependencies: []
+- name: metric-store-exporter
+  version: 929b83d9858e337284cf6f66bab30ee2e274f354b0cda786f9d974fc8c798522
+  fingerprint: 929b83d9858e337284cf6f66bab30ee2e274f354b0cda786f9d974fc8c798522
+  sha1: sha256:425f0fed68a2e5fd32e5c6e550885b9938e17163e3495d6868a133d656697926
+  dependencies:
+  - golang-1-linux
+license:
+  version: bb07be9bd93bcf33eb7b7beb8874200b8b9a7f4335f5b315c53c4399c1bcbc1d
+  fingerprint: bb07be9bd93bcf33eb7b7beb8874200b8b9a7f4335f5b315c53c4399c1bcbc1d
+  sha1: sha256:fdba29b335ccf6fe6ae52ac8368c0e52279071461fc6982fa632d2e31e379b21
