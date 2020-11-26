@@ -5,7 +5,7 @@
     release: metric-store-exporter
     properties:
       metric_store_exporter:
-        ca_certs:
+        ca_pool:
           - ((metric_store.ca))
         metric_store:
           mtls:

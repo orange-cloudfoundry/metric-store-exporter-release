@@ -38,8 +38,8 @@ properties:
     description: "private key for serving TLS requests. Required if metric_store_exporter.enable_ssl is true."
   metric_store_exporter.tls_pem.cert_chain:
     description: "certificate for serving TLS requests. Required if metric_store_exporter.enable_ssl is true."
-  metric_store_exporter.ca_certs:
-    description: "Required. String of concatenated certificate authorities in PEM format, used to validate certificates provided by remote systems. By default, Gorouter will trust certificates signed by well-known CAs and by CA certificates installed on the filesystem."
+  metric_store_exporter.ca_pool:
+    description: "Required. list of String of concatenated certificate authorities in PEM format, used to validate certificates provided by remote systems. By default, Gorouter will trust certificates signed by well-known CAs and by CA certificates installed on the filesystem."
     default: [ ]
 
   metric_store_exporter.metric_store.mtls.cert_chain:
