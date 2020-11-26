@@ -1,0 +1,51 @@
+---
+name: metric-store-exporter
+
+templates:
+  bpm.yml: config/bpm.yml
+  config.yml.erb: config/config.yml
+
+packages:
+  - metric-store-exporter
+
+
+properties:
+
+  metric_store_exporter.port:
+    default: 8086
+    description: |
+      Port for listening
+
+  metric_store_exporter.nb_workers:
+    default: 50
+    desciption: "number of workers to retrieve metrics in parallel from metric-store"
+
+  metric_store_exporter.skip_ssl_validation:
+    description: "not used"
+    default: false
+  metric_store_exporter.enable_ssl:
+    description: "not used"
+    default: false
+
+
+  metric_store_exporter.log_level:
+    description: |
+      log level to use for server
+      you can chose: `trace`, `debug`, `info`, `warn`, `error`, `fatal` or `panic`
+    default: "info"
+
+  metric_store_exporter.tls_pem.private_key:
+    description: "private key for serving TLS requests. Required if metric_store_exporter.enable_ssl is true."
+  metric_store_exporter.tls_pem.cert_chain:
+    description: "certificate for serving TLS requests. Required if metric_store_exporter.enable_ssl is true."
+  metric_store_exporter.ca_certs:
+    description: "Required. String of concatenated certificate authorities in PEM format, used to validate certificates provided by remote systems. By default, Gorouter will trust certificates signed by well-known CAs and by CA certificates installed on the filesystem."
+    default: [ ]
+
+  metric_store_exporter.metric_store.mtls.cert_chain:
+    description: Certificate chain used for client authentication to TLS-registered metric store.  In PEM format.
+  metric_store_exporter.metric_store.mtls.private_key:
+    description: Private key used for client authentication to TLS-registered metric store.  In PEM format.
+  metric_store_exporter.metric_store.api:
+    default: "https://localhost:8080"
+    descriptin: "http api of metric-store"

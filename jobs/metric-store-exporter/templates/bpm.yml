@@ -1,0 +1,6 @@
+processes:
+  - name: metric-store-exporter
+    executable: /var/vcap/packages/promfetcher/bin/metric-store-exporter
+    args:
+      - "-c"
+      - "/var/vcap/jobs/metric-store-exporter/config/config.yml"

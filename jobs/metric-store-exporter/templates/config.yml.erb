@@ -1,0 +1,51 @@
+---
+    <% if p("metric_store_exporter.enable_ssl") %>
+    <%=
+  tls_cert_chain = ''
+  tls_private_key = ''
+  if_p("metric_store_exporter.tls_pem.cert_chain") { |val| tls_cert_chain = val }
+  if_p("metric_store_exporter.tls_pem.private_key") { |val| tls_private_key = val }
+
+  if (tls_cert_chain != '') ^ (tls_private_key != '')
+    raise 'tls_pem.cert_chain and tls_pem.private_key must be both provided'
+  end
+
+  tls_pem = {
+    "cert_chain" => tls_cert_chain,
+    "private_key" => tls_private_key,
+  }
+
+  { "ssl_certificate" => tls_pem }.to_yaml[3..-1]
+%>
+    <% end %>
+    <% if p("metric_store_exporter.ca_pool")
+ ca_certs = p("metric_store_exporter.ca_pool")
+%>
+    <%= { 'ca_pool' => ca_certs }.to_yaml[3..-1] %>
+    <% end %>
+skip_ssl_validation: <%= p("metric_store_exporter.skip_ssl_validation") %>
+enable_ssl: <%= p("metric_store_exporter.enable_ssl") %>
+port: <%= p("metric_store_exporter.port") %>
+logging:
+  level: <%= p("metric_store_exporter.log_level") %>
+  in_json: true
+
+    <%=
+  mtls_cert_chain = ''
+  mtls_private_key = ''
+  if_p("metric_store_exporter.metric_store.mtls.cert_chain") { |val| mtls_cert_chain = val }
+  if_p("metric_store_exporter.metric_store.mtls.private_key") { |val| mtls_private_key = val }
+
+  if (mtls_cert_chain != '') ^ (mtls_private_key != '')
+    raise 'metric_store_mtls.cert_chain and metric_store_mtls.private_key must be both provided'
+  end
+
+  mtls_pem = {
+    "cert_chain" => mtls_cert_chain,
+    "private_key" => mtls_private_key,
+  }
+
+  { "metric_store_mtls" => mtls_pem }.to_yaml[3..-1]
+%>
+metric_store_api: <%= p("metric_store_exporter.metric_store.api") %>
+nb_workers: <%= p("metric_store_exporter.nb_workers") %>

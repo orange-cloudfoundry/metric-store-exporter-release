@@ -1,0 +1,3 @@
+[submodule "src/metric-store-exporter"]
+	path = src/metric-store-exporter
+	url = https://github.com/orange-cloudfoundry/metric-store-exporter

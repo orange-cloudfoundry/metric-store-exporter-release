@@ -1,0 +1,21 @@
+- type: replace
+  path: /instance_groups/name=metric-store/jobs/-
+  value:
+    name: metric-store-exporter
+    release: metric-store-exporter
+    properties:
+      metric_store_exporter:
+        ca_certs:
+          - ((metric_store.ca))
+        metric_store:
+          mtls:
+            cert_chain: ((metric_store.certificate))
+            private_key: ((metric_store.private_key))
+          api: "https://localhost:8080"
+
+- type: replace
+  path: /releases/-
+  value:
+    name: metric-store-exporter
+    version: latest
+    url: https://github.com/orange-cloudfoundry/metric-store-exporter-release/releases/download/v1.0.0/metric-store-exporter-1.0.0.tgz
