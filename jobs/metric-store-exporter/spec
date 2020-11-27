@@ -19,6 +19,9 @@ properties:
   metric_store_exporter.nb_workers:
     default: 50
     desciption: "number of workers to retrieve metrics in parallel from metric-store"
+  metric_store_exporter.metric_namespace:
+    default: ""
+    descriptin: "Add a prefix to all metrics"
 
   metric_store_exporter.skip_ssl_validation:
     description: "not used"
