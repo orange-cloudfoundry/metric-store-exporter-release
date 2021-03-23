@@ -1,8 +1,7 @@
 ---
 name: metric-store-exporter
 
-dependencies:
-  - golang-1-linux
+dependencies: []
 
 files:
-  - metric-store-exporter/**
+  - metric-store-exporter_linux.tar.gz
