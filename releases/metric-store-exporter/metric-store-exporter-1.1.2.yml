@@ -1,0 +1,21 @@
+name: metric-store-exporter
+version: 1.1.2
+commit_hash: a809d46
+uncommitted_changes: false
+jobs:
+- name: metric-store-exporter
+  version: d6d04191bca4b38ade61e6ca72576fc0e936dc492b7a9e2fc6d32555bf531841
+  fingerprint: d6d04191bca4b38ade61e6ca72576fc0e936dc492b7a9e2fc6d32555bf531841
+  sha1: sha256:49795b2168da11dbeb4fb7f274851ef47bd515990043cbe3bd0aeb3ca8823f2d
+  packages:
+  - metric-store-exporter
+packages:
+- name: metric-store-exporter
+  version: 2104b99941112163f9daaed19467bbe678d4bc75b57f7b10344762759d0c8695
+  fingerprint: 2104b99941112163f9daaed19467bbe678d4bc75b57f7b10344762759d0c8695
+  sha1: sha256:c64f595960371301297c97574efd32299449cbabfc743d398fbb41d763094767
+  dependencies: []
+license:
+  version: bb07be9bd93bcf33eb7b7beb8874200b8b9a7f4335f5b315c53c4399c1bcbc1d
+  fingerprint: bb07be9bd93bcf33eb7b7beb8874200b8b9a7f4335f5b315c53c4399c1bcbc1d
+  sha1: sha256:fdba29b335ccf6fe6ae52ac8368c0e52279071461fc6982fa632d2e31e379b21
